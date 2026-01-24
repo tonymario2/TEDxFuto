@@ -15,7 +15,7 @@ const HeroSection = () => {
           className="absolute inset-0 w-full h-full hero-video"
         >
           <source
-            src="/Image folder/Video Background Of Homepage (7).mp4"
+            src="/images/Video Background Of Homepage (7).mp4"
             type="video/mp4"
           />
         </video>

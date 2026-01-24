@@ -7,7 +7,7 @@ const Partners = () => {
       {/* Hero Section - Full width image */}
       <section className="w-full">
         <img 
-          src="/Image folder/Top section of the patner page.png.avif" 
+          src="/images/Top section of the patner page.png.avif" 
           alt="TEDxFUTO Partners" 
           className="w-full h-auto object-cover"
         />

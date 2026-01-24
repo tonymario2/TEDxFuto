@@ -5,10 +5,10 @@ import { cn } from '@/lib/utils';
 
 const speakersByYear = {
   '2026': [
-    { name: 'Toria Dickson', role: 'Speaker Role', image: '/Image folder/Toria Dickson Speaker 2 (1).avif' },
-    { name: 'Julie Adaugo', role: 'Speaker Role', image: '/Image folder/Julie Adaugo Speaker 1.avif' },
-    { name: 'Coming Soon', role: 'Speaker Role', image: '/Image folder/mysterious-speaker-silhouette-with-question-mark-d.jpg' },
-    { name: 'Coming Soon', role: 'Speaker Role', image: '/Image folder/mysterious-speaker-silhouette-with-question-mark-d.jpg' },
+    { name: 'Toria Dickson', role: 'Speaker Role', image: '/images/Toria Dickson Speaker 2 (1).avif' },
+    { name: 'Julie Adaugo', role: 'Speaker Role', image: '/images/Julie Adaugo Speaker 1.avif' },
+    { name: 'Coming Soon', role: 'Speaker Role', image: '/images/mysterious-speaker-silhouette-with-question-mark-d.jpg' },
+    { name: 'Coming Soon', role: 'Speaker Role', image: '/images/mysterious-speaker-silhouette-with-question-mark-d.jpg' },
   ],
   '2025': [
     { name: 'Chinedu Okafor', role: 'Speaker', image: 'https://ihpenhylfmcl3mb0.public.blob.vercel-storage.com/TEDx%20Futo%20Repo%202/Templated%20speaker%201.jpg' },

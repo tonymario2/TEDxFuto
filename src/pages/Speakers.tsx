@@ -3,22 +3,22 @@ import { motion } from 'framer-motion';
 
 const speakersByYear = {
   '2026': [
-    { name: 'Toria Dickson', role: 'Speaker Role', bio: 'Speaker bio placeholder. Details to be confirmed.', image: '/Image folder/Toria Dickson Speaker 2 (1).avif' },
-    { name: 'Julie Adaugo', role: 'Speaker Role', bio: 'Speaker bio placeholder. Details to be confirmed.', image: '/Image folder/Julie Adaugo Speaker 1.avif' },
-    { name: 'Coming Soon', role: 'Speaker Role', bio: 'Speaker bio placeholder. Details to be confirmed.', image: '/Image folder/mysterious-speaker-silhouette-with-question-mark-d.jpg' },
-    { name: 'Coming Soon', role: 'Speaker Role', bio: 'Speaker bio placeholder. Details to be confirmed.', image: '/Image folder/mysterious-speaker-silhouette-with-question-mark-d.jpg' },
+    { name: 'Toria Dickson', role: 'Speaker Role', bio: 'Speaker bio placeholder. Details to be confirmed.', image: '/images/Toria Dickson Speaker 2 (1).avif' },
+    { name: 'Julie Adaugo', role: 'Speaker Role', bio: 'Speaker bio placeholder. Details to be confirmed.', image: '/images/Julie Adaugo Speaker 1.avif' },
+    { name: 'Coming Soon', role: 'Speaker Role', bio: 'Speaker bio placeholder. Details to be confirmed.', image: '/images/mysterious-speaker-silhouette-with-question-mark-d.jpg' },
+    { name: 'Coming Soon', role: 'Speaker Role', bio: 'Speaker bio placeholder. Details to be confirmed.', image: '/images/mysterious-speaker-silhouette-with-question-mark-d.jpg' },
   ],
   '2025': [
-    { name: 'Chinedu Okafor', role: 'Speaker', bio: 'Previous edition speaker.', image: '/Image folder/Templated speaker 1.jpg' },
-    { name: 'Emeka Nwosu', role: 'Speaker', bio: 'Previous edition speaker.', image: '/Image folder/Templated speaker 2.jpg' },
-    { name: 'Amina Bello', role: 'Speaker', bio: 'Previous edition speaker.', image: '/Image folder/Templated speaker 6.jpg' },
-    { name: 'Sola Adeyemi', role: 'Speaker', bio: 'Previous edition speaker.', image: '/Image folder/Templated speaker 4.jpg' },
+    { name: 'Chinedu Okafor', role: 'Speaker', bio: 'Previous edition speaker.', image: '/images/Templated speaker 1.jpg' },
+    { name: 'Emeka Nwosu', role: 'Speaker', bio: 'Previous edition speaker.', image: '/images/Templated speaker 2.jpg' },
+    { name: 'Amina Bello', role: 'Speaker', bio: 'Previous edition speaker.', image: '/images/Templated speaker 6.jpg' },
+    { name: 'Sola Adeyemi', role: 'Speaker', bio: 'Previous edition speaker.', image: '/images/Templated speaker 4.jpg' },
   ],
   '2024': [
-    { name: 'David Okoro', role: 'Speaker', bio: 'Previous edition speaker.', image: '/Image folder/Templated speaker 5.jpg' },
-    { name: 'Ifunanya Nwoye', role: 'Speaker', bio: 'Previous edition speaker.', image: '/Image folder/Templated speaker 7.jpg' },
-    { name: 'Bolaji Ibrahim', role: 'Speaker', bio: 'Previous edition speaker.', image: '/Image folder/Templated speaker 3.jpg' },
-    { name: 'Blessing Adekunle', role: 'Speaker', bio: 'Previous edition speaker.', image: '/Image folder/Templated speaker 8.jpg' },
+    { name: 'David Okoro', role: 'Speaker', bio: 'Previous edition speaker.', image: '/images/Templated speaker 5.jpg' },
+    { name: 'Ifunanya Nwoye', role: 'Speaker', bio: 'Previous edition speaker.', image: '/images/Templated speaker 7.jpg' },
+    { name: 'Bolaji Ibrahim', role: 'Speaker', bio: 'Previous edition speaker.', image: '/images/Templated speaker 3.jpg' },
+    { name: 'Blessing Adekunle', role: 'Speaker', bio: 'Previous edition speaker.', image: '/images/Templated speaker 8.jpg' },
   ],
 };
 
