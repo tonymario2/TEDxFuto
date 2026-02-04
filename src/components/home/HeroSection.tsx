@@ -97,7 +97,7 @@ const HeroSection = () => {
               className="border-foreground/30 text-foreground hover:bg-foreground/10 font-semibold px-8 py-6 text-lg"
               asChild
             >
-              <a href="/partners#call-for-sponsorship">
+              <a href="/partners">
                 Get Involved
               </a>
             </Button>

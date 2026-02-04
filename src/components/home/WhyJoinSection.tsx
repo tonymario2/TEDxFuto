@@ -63,8 +63,12 @@ const WhyJoinSection = () => {
               ))}
             </div>
 
-            <Button size="lg" className="ted-gradient text-primary-foreground font-semibold px-8">
-              Discover More
+            <Button
+              size="lg"
+              className="ted-gradient text-primary-foreground font-semibold px-8"
+              asChild
+            >
+              <a href="/partners">Discover More</a>
             </Button>
           </motion.div>
 

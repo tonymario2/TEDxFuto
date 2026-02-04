@@ -3,13 +3,31 @@ import { useState } from 'react';
 import { Twitter } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
+const getSpeakerNameFromImagePath = (imagePath: string) => {
+  const fileName = imagePath.split('/').pop() ?? '';
+  const withoutExtension = fileName.replace(/\.[^/.]+$/, '');
+  const lower = withoutExtension.toLowerCase();
+  const speakerIndex = lower.indexOf('speaker');
+  const beforeSpeaker =
+    speakerIndex >= 0 ? withoutExtension.slice(0, speakerIndex) : withoutExtension;
+
+  const cleaned = beforeSpeaker.replace(/[-_]+/g, ' ').replace(/\s+/g, ' ').trim();
+  return cleaned;
+};
+
 const speakersByYear = {
   '2026': [
-    { name: 'Toria Dickson', role: 'Speaker Role', image: '/images/Toria Dickson Speaker 2 (1).avif' },
-    { name: 'Julie Adaugo', role: 'Speaker Role', image: '/images/Julie Adaugo Speaker 1.avif' },
-    { name: 'Coming Soon', role: 'Speaker Role', image: '/images/mysterious-speaker-silhouette-with-question-mark-d.jpg' },
-    { name: 'Coming Soon', role: 'Speaker Role', image: '/images/mysterious-speaker-silhouette-with-question-mark-d.jpg' },
-  ],
+    { image: '/images/Toria Dickson Speaker 2 (1).avif' },
+    { image: '/images/Julie Adaugo Speaker 1.avif' },
+    { image: '/images/New images/Akwa man speaker 3.avif' },
+    { image: '/images/New images/Iheanacho Precious speaker 4.avif' },
+    { image: '/images/New images/Tobe Ugeh speaker 5.avif' },
+    { image: '/images/New images/Tochukwu Clinton speaker 6.avif' },
+  ].map((speaker) => ({
+    ...speaker,
+    name: getSpeakerNameFromImagePath(speaker.image),
+    role: 'Speaker Role',
+  })),
   '2025': [
     { name: 'Chinedu Okafor', role: 'Speaker', image: 'https://ihpenhylfmcl3mb0.public.blob.vercel-storage.com/TEDx%20Futo%20Repo%202/Templated%20speaker%201.jpg' },
     { name: 'Emeka Nwosu', role: 'Speaker', image: 'https://ihpenhylfmcl3mb0.public.blob.vercel-storage.com/TEDx%20Futo%20Repo%202/Templated%20speaker%202.jpg' },

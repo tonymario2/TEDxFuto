@@ -1,17 +1,26 @@
 import { motion } from 'framer-motion';
 
-const partners = [
-  { name: 'Partner 1', logo: 'https://via.placeholder.com/200x80/1a1a1a/666?text=Partner+1' },
-  { name: 'Partner 2', logo: 'https://via.placeholder.com/200x80/1a1a1a/666?text=Partner+2' },
-  { name: 'Partner 3', logo: 'https://via.placeholder.com/200x80/1a1a1a/666?text=Partner+3' },
-  { name: 'Partner 4', logo: 'https://via.placeholder.com/200x80/1a1a1a/666?text=Partner+4' },
-  { name: 'Partner 5', logo: 'https://via.placeholder.com/200x80/1a1a1a/666?text=Partner+5' },
-  { name: 'Partner 6', logo: 'https://via.placeholder.com/200x80/1a1a1a/666?text=Partner+6' },
+const sponsorLogos = [
+  '/images/New images/Diora sponsor 1.jpeg',
+  '/images/New images/Light Craft Sponsor 2.jpeg',
+  '/images/New images/Indomie Sponsor 3.avif',
+  '/images/New images/Futo Gist Media Sponsor 4.avif',
+  '/images/New images/CYBER SEC-CORD NETWORK  Sponsor 6.png',
+  '/images/New images/D.p GROUP Sponsor 7.png',
+  '/images/New images/George Global Sponsor 8.png',
+  '/images/New images/OrvellaMedia-logo Sponsor 9.png',
+  '/images/New images/PRINX CONCEPT Sponsor 10.png',
+  '/images/New images/SUG Sponsor 11.avif',
+  '/images/New images/AddMe Sponsor 12.avif',
+  '/images/New images/FilmByPr Sponsor 13.png',
+  '/images/New images/APG Global Sponsor 14.png',
+  '/images/New images/HUBEX Sponsor 15.png',
+  '/images/New images/Mr Telecom Media Speaker 5.png',
 ];
 
 const PartnersSection = () => {
   return (
-    <section className="section-padding">
+    <section className="section-padding bg-white">
       <div className="container mx-auto container-padding">
         {/* Section Header */}
         <motion.div
@@ -22,7 +31,8 @@ const PartnersSection = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Partners & <span className="text-ted-red">Sponsors</span>
+            <span style={{ color: '#000000' }}>Partners &</span>{' '}
+            <span className="text-ted-red">Sponsors</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Thank you to our partners and sponsors who make TEDxFUTO possible.
@@ -35,29 +45,33 @@ const PartnersSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center"
+          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-10 items-center"
         >
-          {partners.map((partner, index) => (
-            <motion.div
-              key={partner.name}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: index * 0.1 }}
-              className="flex items-center justify-center p-6 rounded-xl bg-muted/30 hover:bg-muted/50 transition-colors"
-            >
-              <img
-                src={partner.logo}
-                alt={partner.name}
-                className="max-h-12 opacity-60 hover:opacity-100 transition-opacity"
-              />
-            </motion.div>
-          ))}
+          {sponsorLogos.map((logo, index) => {
+            const alt = logo.split('/').pop()?.replace(/\.[^/.]+$/, '') ?? 'Sponsor logo';
+            const isOrvella = logo.includes('OrvellaMedia-logo Sponsor 9.png');
+            return (
+              <motion.div
+                key={logo}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: index * 0.1 }}
+                className="flex items-center justify-center"
+              >
+                <img
+                  src={logo}
+                  alt={alt}
+                  className={`max-h-16 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity ${
+                    isOrvella ? 'max-h-20' : ''
+                  }`}
+                />
+              </motion.div>
+            );
+          })}
         </motion.div>
 
-        <p className="text-center text-muted-foreground text-sm mt-8">
-          * Partner logos are placeholders. Actual partners will be confirmed.
-        </p>
+        <p className="text-center text-muted-foreground text-sm mt-8" />
       </div>
     </section>
   );

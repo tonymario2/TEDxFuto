@@ -129,8 +129,10 @@ const Header = () => {
 
           {/* CTA Button */}
           <div className="hidden lg:block">
-            <Button className="ted-gradient text-primary-foreground font-semibold px-6">
-              Get Tickets
+            <Button asChild className="ted-gradient text-primary-foreground font-semibold px-6">
+              <a href="https://www.pv.rsvp/tedxfuto-2026" target="_blank" rel="noopener noreferrer">
+                Get Tickets
+              </a>
             </Button>
           </div>
 
@@ -208,8 +210,10 @@ const Header = () => {
                   </div>
                 ))}
                 <div className="pt-4 px-4">
-                  <Button className="w-full ted-gradient text-primary-foreground font-semibold">
-                    Get Tickets
+                  <Button asChild className="w-full ted-gradient text-primary-foreground font-semibold">
+                    <a href="https://www.pv.rsvp/tedxfuto-2026" target="_blank" rel="noopener noreferrer">
+                      Get Tickets
+                    </a>
                   </Button>
                 </div>
               </div>

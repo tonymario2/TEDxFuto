@@ -1,13 +1,55 @@
 import Layout from '@/components/layout/Layout';
 import { motion } from 'framer-motion';
+import { cn } from '@/lib/utils';
+
+const getSpeakerNameFromImagePath = (imagePath: string) => {
+  const fileName = imagePath.split('/').pop() ?? '';
+  const withoutExtension = fileName.replace(/\.[^/.]+$/, '');
+  const lower = withoutExtension.toLowerCase();
+  const speakerIndex = lower.indexOf('speaker');
+  const beforeSpeaker =
+    speakerIndex >= 0 ? withoutExtension.slice(0, speakerIndex) : withoutExtension;
+
+  const cleaned = beforeSpeaker.replace(/[-_]+/g, ' ').replace(/\s+/g, ' ').trim();
+  return cleaned;
+};
 
 const speakersByYear = {
   '2026': [
-    { name: 'Toria Dickson', role: 'Speaker Role', bio: 'Speaker bio placeholder. Details to be confirmed.', image: '/images/Toria Dickson Speaker 2 (1).avif' },
-    { name: 'Julie Adaugo', role: 'Speaker Role', bio: 'Speaker bio placeholder. Details to be confirmed.', image: '/images/Julie Adaugo Speaker 1.avif' },
-    { name: 'Coming Soon', role: 'Speaker Role', bio: 'Speaker bio placeholder. Details to be confirmed.', image: '/images/mysterious-speaker-silhouette-with-question-mark-d.jpg' },
-    { name: 'Coming Soon', role: 'Speaker Role', bio: 'Speaker bio placeholder. Details to be confirmed.', image: '/images/mysterious-speaker-silhouette-with-question-mark-d.jpg' },
-  ],
+    {
+      image: '/images/Toria Dickson Speaker 2 (1).avif',
+      role: 'Speaker Role',
+      bio: 'Speaker bio placeholder. Details to be confirmed.',
+    },
+    {
+      image: '/images/Julie Adaugo Speaker 1.avif',
+      role: 'Speaker Role',
+      bio: 'Speaker bio placeholder. Details to be confirmed.',
+    },
+    {
+      image: '/images/New images/Akwa man speaker 3.avif',
+      role: 'Speaker Role',
+      bio: 'Speaker bio placeholder. Details to be confirmed.',
+    },
+    {
+      image: '/images/New images/Iheanacho Precious speaker 4.avif',
+      role: 'Speaker Role',
+      bio: 'Speaker bio placeholder. Details to be confirmed.',
+    },
+    {
+      image: '/images/New images/Tobe Ugeh speaker 5.avif',
+      role: 'Speaker Role',
+      bio: 'Speaker bio placeholder. Details to be confirmed.',
+    },
+    {
+      image: '/images/New images/Tochukwu Clinton speaker 6.avif',
+      role: 'Speaker Role',
+      bio: 'Speaker bio placeholder. Details to be confirmed.',
+    },
+  ].map((speaker) => ({
+    ...speaker,
+    name: getSpeakerNameFromImagePath(speaker.image),
+  })),
   '2025': [
     { name: 'Chinedu Okafor', role: 'Speaker', bio: 'Previous edition speaker.', image: '/images/Templated speaker 1.jpg' },
     { name: 'Emeka Nwosu', role: 'Speaker', bio: 'Previous edition speaker.', image: '/images/Templated speaker 2.jpg' },
@@ -41,7 +83,11 @@ const Speakers = () => {
                         <img 
                           src={speaker.image} 
                           alt={speaker.name} 
-                          className="w-full h-full object-cover object-top"
+                          className={cn(
+                            'w-full h-full object-cover object-top',
+                            year === '2026' &&
+                              'grayscale hover:grayscale-0 transition-all duration-300',
+                          )}
                           loading="lazy"
                         />
                       </div>
