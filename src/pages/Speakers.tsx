@@ -37,7 +37,8 @@ const speakersByYear = {
       bio: 'Speaker bio placeholder. Details to be confirmed.',
     },
     {
-      image: '/images/New images/Tobe Ugeh speaker 5.avif',
+      image: '/images/New images/Last Speaker.avif',
+      name: 'Gift Muoneke',
       role: 'Speaker Role',
       bio: 'Speaker bio placeholder. Details to be confirmed.',
     },
@@ -48,7 +49,7 @@ const speakersByYear = {
     },
   ].map((speaker) => ({
     ...speaker,
-    name: getSpeakerNameFromImagePath(speaker.image),
+    name: speaker.name ?? getSpeakerNameFromImagePath(speaker.image),
   })),
   '2025': [
     { name: 'Chinedu Okafor', role: 'Speaker', bio: 'Previous edition speaker.', image: '/images/Templated speaker 1.jpg' },

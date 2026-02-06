@@ -21,12 +21,12 @@ const speakersByYear = {
     { image: '/images/Julie Adaugo Speaker 1.avif' },
     { image: '/images/New images/Akwa man speaker 3.avif' },
     { image: '/images/New images/Iheanacho Precious speaker 4.avif' },
-    { image: '/images/New images/Tobe Ugeh speaker 5.avif' },
+    { image: '/images/New images/Last Speaker.avif', name: 'Gift Muoneke' },
     { image: '/images/New images/Tochukwu Clinton speaker 6.avif' },
   ].map((speaker) => ({
     ...speaker,
-    name: getSpeakerNameFromImagePath(speaker.image),
-    role: 'Speaker Role',
+    name: speaker.name ?? getSpeakerNameFromImagePath(speaker.image),
+    role: speaker.role ?? 'Speaker Role',
   })),
   '2025': [
     { name: 'Chinedu Okafor', role: 'Speaker', image: 'https://ihpenhylfmcl3mb0.public.blob.vercel-storage.com/TEDx%20Futo%20Repo%202/Templated%20speaker%201.jpg' },

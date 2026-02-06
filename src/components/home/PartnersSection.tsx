@@ -1,19 +1,22 @@
 import { motion } from 'framer-motion';
 
 const sponsorLogos = [
-  '/images/New images/Diora sponsor 1.jpeg',
+  // Platinum sponsor – Diora (kept first, using sample image)
+  '/images/New images/Diora sample.jpeg',
+  // Priority sponsors in strict order
+  '/images/New images/APG Global Sponsor 14.png',
+  '/images/New images/OrvellaMedia-logo Sponsor 9.png',
+  // Remaining sponsors, internal order preserved
   '/images/New images/Light Craft Sponsor 2.jpeg',
   '/images/New images/Indomie Sponsor 3.avif',
   '/images/New images/Futo Gist Media Sponsor 4.avif',
   '/images/New images/CYBER SEC-CORD NETWORK  Sponsor 6.png',
   '/images/New images/D.p GROUP Sponsor 7.png',
   '/images/New images/George Global Sponsor 8.png',
-  '/images/New images/OrvellaMedia-logo Sponsor 9.png',
   '/images/New images/PRINX CONCEPT Sponsor 10.png',
   '/images/New images/SUG Sponsor 11.avif',
   '/images/New images/AddMe Sponsor 12.avif',
   '/images/New images/FilmByPr Sponsor 13.png',
-  '/images/New images/APG Global Sponsor 14.png',
   '/images/New images/HUBEX Sponsor 15.png',
   '/images/New images/Mr Telecom Media Speaker 5.png',
 ];
@@ -50,6 +53,7 @@ const PartnersSection = () => {
           {sponsorLogos.map((logo, index) => {
             const alt = logo.split('/').pop()?.replace(/\.[^/.]+$/, '') ?? 'Sponsor logo';
             const isOrvella = logo.includes('OrvellaMedia-logo Sponsor 9.png');
+            const isDiora = logo.includes('Diora sample.jpeg');
             return (
               <motion.div
                 key={logo}
@@ -57,14 +61,18 @@ const PartnersSection = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
-                className="flex items-center justify-center"
+                className={`flex items-center justify-center ${isDiora ? 'col-span-2' : 'col-span-1'
+                  }`}
               >
                 <img
                   src={logo}
                   alt={alt}
-                  className={`max-h-16 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity ${
-                    isOrvella ? 'max-h-20' : ''
-                  }`}
+                  className={`w-auto object-contain opacity-80 hover:opacity-100 transition-opacity ${isDiora
+                      ? 'max-h-32 md:max-h-40'
+                      : isOrvella
+                        ? 'max-h-20'
+                        : 'max-h-16'
+                    }`}
                 />
               </motion.div>
             );
