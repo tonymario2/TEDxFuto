@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 
 const sponsorLogos = [
   // Platinum sponsor – Diora (kept first, using sample image)
-  '/images/New images/Diora sample.jpeg',
+  '/images/New images/Diora sample.avif',
   // Priority sponsors in strict order
   '/images/New images/APG Global Sponsor 14.png',
   '/images/New images/OrvellaMedia-logo Sponsor 9.png',
@@ -53,7 +53,7 @@ const PartnersSection = () => {
           {sponsorLogos.map((logo, index) => {
             const alt = logo.split('/').pop()?.replace(/\.[^/.]+$/, '') ?? 'Sponsor logo';
             const isOrvella = logo.includes('OrvellaMedia-logo Sponsor 9.png');
-            const isDiora = logo.includes('Diora sample.jpeg');
+            const isDiora = logo.includes('Diora sample.avif');
             return (
               <motion.div
                 key={logo}
@@ -68,10 +68,10 @@ const PartnersSection = () => {
                   src={logo}
                   alt={alt}
                   className={`w-auto object-contain opacity-80 hover:opacity-100 transition-opacity ${isDiora
-                      ? 'max-h-32 md:max-h-40'
-                      : isOrvella
-                        ? 'max-h-20'
-                        : 'max-h-16'
+                    ? 'max-h-32 md:max-h-40'
+                    : isOrvella
+                      ? 'max-h-20'
+                      : 'max-h-16'
                     }`}
                 />
               </motion.div>
