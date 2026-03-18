@@ -179,7 +179,7 @@ const GalleryAlbum: React.FC<GalleryAlbumProps> = ({ images, category, title, de
 
           {/* Progress Bar (Moved below carousel) */}
           {api && (
-            <div className="px-6 md:px-12 py-6 md:py-8 shrink-0 bg-gradient-to-t from-black/80 to-transparent">
+            <div className="px-6 md:px-12 pb-12 md:pb-16 shrink-0 bg-gradient-to-t from-black/80 to-transparent">
               <div className="w-full h-1 bg-white/10 rounded-full overflow-hidden">
                 <motion.div 
                   className="h-full bg-ted-red"

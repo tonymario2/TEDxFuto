@@ -236,7 +236,7 @@ const ConferenceHighlights = () => {
               className="group relative overflow-hidden rounded-2xl aspect-video"
             >
               <img 
-                src="/public/Pictures/Organizers moments/PRX_1797.avif"
+                src="/Pictures/Organizers moments/PRX_1797.avif"
                 alt="The Spark of Ideas"
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
@@ -253,7 +253,7 @@ const ConferenceHighlights = () => {
               className="group relative overflow-hidden rounded-2xl aspect-video"
             >
               <img 
-                src="/public/Pictures/Organizers moments/IMG_0727.avif"
+                src="/Pictures/Organizers moments/IMG_0727.avif"
                 alt="Crafting the Stage"
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
@@ -270,7 +270,7 @@ const ConferenceHighlights = () => {
               className="group relative overflow-hidden rounded-2xl aspect-video"
             >
               <img 
-                src="/public/Pictures/Organizers moments/DSC_2017.avif"
+                src="/Pictures/Organizers moments/DSC_2017.avif"
                 alt="Impact Made"
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
