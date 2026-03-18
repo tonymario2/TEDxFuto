@@ -17,29 +17,16 @@ const getSpeakerNameFromImagePath = (imagePath: string) => {
 
 const speakersByYear = {
   '2026': [
-    { image: '/images/Toria Dickson Speaker 2 (1).avif' },
-    { image: '/images/Julie Adaugo Speaker 1.avif' },
-    { image: '/images/New images/Akwa man speaker 3.avif' },
-    { image: '/images/New images/Iheanacho Precious speaker 4.avif' },
-    { image: '/images/New images/Last Speaker.avif', name: 'Gift Muoneke' },
-    { image: '/images/New images/Tochukwu Clinton speaker 6.avif' },
+    { image: '/images/Toria Dickson Speaker 2 (1).avif', role: 'Speaker Role' },
+    { image: '/images/Julie Adaugo Speaker 1.avif', role: 'Speaker Role' },
+    { image: '/images/New images/Akwa man speaker 3.avif', role: 'Speaker Role' },
+    { image: '/images/New images/Iheanacho Precious speaker 4.avif', role: 'Speaker Role' },
+    { image: '/images/New images/Last Speaker.avif', name: 'Gift Muoneke', role: 'Speaker Role' },
+    { image: '/images/New images/Tochukwu Clinton speaker 6.avif', role: 'Speaker Role' },
   ].map((speaker) => ({
     ...speaker,
     name: speaker.name ?? getSpeakerNameFromImagePath(speaker.image),
-    role: speaker.role ?? 'Speaker Role',
   })),
-  '2025': [
-    { name: 'Chinedu Okafor', role: 'Speaker', image: 'https://ihpenhylfmcl3mb0.public.blob.vercel-storage.com/TEDx%20Futo%20Repo%202/Templated%20speaker%201.jpg' },
-    { name: 'Emeka Nwosu', role: 'Speaker', image: 'https://ihpenhylfmcl3mb0.public.blob.vercel-storage.com/TEDx%20Futo%20Repo%202/Templated%20speaker%202.jpg' },
-    { name: 'Amina Bello', role: 'Speaker', image: 'https://ihpenhylfmcl3mb0.public.blob.vercel-storage.com/TEDx%20Futo%20Repo%202/Templated%20speaker%206.jpg' },
-    { name: 'Sola Adeyemi', role: 'Speaker', image: 'https://ihpenhylfmcl3mb0.public.blob.vercel-storage.com/TEDx%20Futo%20Repo%202/Templated%20speaker%204.jpg' },
-  ],
-  '2024': [
-    { name: 'David Okoro', role: 'Speaker', image: 'https://ihpenhylfmcl3mb0.public.blob.vercel-storage.com/TEDx%20Futo%20Repo%202/Templated%20speaker%205.jpg' },
-    { name: 'Ifunanya Nwoye', role: 'Speaker', image: 'https://ihpenhylfmcl3mb0.public.blob.vercel-storage.com/TEDx%20Futo%20Repo%202/Templated%20speaker%207.jpg' },
-    { name: 'Bolaji Ibrahim', role: 'Speaker', image: 'https://ihpenhylfmcl3mb0.public.blob.vercel-storage.com/TEDx%20Futo%20Repo%202/Templated%20speaker%203.jpg' },
-    { name: 'Blessing Adekunle', role: 'Speaker', image: 'https://ihpenhylfmcl3mb0.public.blob.vercel-storage.com/TEDx%20Futo%20Repo%202/Templated%20speaker%208.jpg' },
-  ],
 };
 
 const years = Object.keys(speakersByYear).sort((a, b) => Number(b) - Number(a));
@@ -66,23 +53,6 @@ const SpeakersSection = () => {
           </p>
         </motion.div>
 
-        {/* Year Tabs */}
-        <div className="flex justify-center gap-2 mb-12">
-          {years.map((year) => (
-            <button
-              key={year}
-              onClick={() => setActiveYear(year)}
-              className={cn(
-                'px-6 py-2 rounded-full text-sm font-semibold transition-all',
-                activeYear === year
-                  ? 'ted-gradient text-white'
-                  : 'bg-muted text-muted-foreground hover:text-foreground'
-              )}
-            >
-              {year}
-            </button>
-          ))}
-        </div>
 
         {/* Speaker Cards */}
         <motion.div
@@ -106,7 +76,7 @@ const SpeakersSection = () => {
                   <img
                     src={speaker.image}
                     alt={speaker.name}
-                    className="w-full h-full object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-300"
+                    className="w-full h-full object-cover object-top transition-all duration-300"
                     loading="lazy"
                   />
                 </div>

@@ -7,19 +7,19 @@ const benefits = [
     icon: Lightbulb,
     title: 'Spark Innovation',
     description: 'Discover breakthrough ideas that inspire new ways of thinking and problem-solving.',
-    image: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?w=600&q=80',
+    image: '/Pictures/Images/spark Innovation.avif',
   },
   {
     icon: Sparkles,
     title: 'Get Inspired',
     description: 'Hear stories of resilience and triumph that will motivate your personal journey.',
-    image: 'https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=600&q=80',
+    image: '/Pictures/Images/Get Inspired.avif',
   },
   {
     icon: Award,
     title: 'Become a Leader',
     description: 'Connect with changemakers and position yourself at the forefront of innovation.',
-    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80',
+    image: '/Pictures/Images/Become a leader.avif',
   },
 ];
 

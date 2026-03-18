@@ -10,6 +10,7 @@ const highlights = [
     description: 'Thought-provoking ideas from visionary speakers that challenge perspectives.',
     cta: 'Watch Talks',
     link: '/highlights#inspiring-talks',
+    image: '/Pictures/Images/Inspiring Talks.avif',
   },
   {
     icon: Users,
@@ -17,6 +18,7 @@ const highlights = [
     description: 'Building connections that foster innovation and positive change in our community.',
     cta: 'View Gallery',
     link: '/highlights#community-impact',
+    image: '/Pictures/Images/Community Impact.avif',
   },
   {
     icon: Camera,
@@ -24,6 +26,7 @@ const highlights = [
     description: 'Capturing the energy, emotions, and breakthrough moments of TEDxFUTO.',
     cta: 'Explore Highlights',
     link: '/highlights#event-moments',
+    image: '/Pictures/Images/Event Moments.avif',
   },
 ];
 
@@ -33,7 +36,7 @@ const HighlightsSection = () => {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img
-          src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=1920&q=80"
+          src="/Pictures/Images/Event Moments.avif"
           alt="Conference background"
           className="w-full h-full object-cover"
         />
@@ -66,22 +69,36 @@ const HighlightsSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
-              className="glass-card rounded-2xl p-8 hover:border-ted-red/50 transition-all duration-300 group"
+              className="group relative h-[400px] rounded-2xl overflow-hidden border border-white/10 hover:border-ted-red/50 transition-all duration-300"
             >
-              <div className="w-14 h-14 rounded-xl ted-gradient flex items-center justify-center mb-6">
-                <item.icon className="h-7 w-7 text-white" />
+              {/* Card Background Image */}
+              <div className="absolute inset-0 z-0">
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-black/70 group-hover:bg-black/60 transition-colors duration-300" />
               </div>
-              <h3 className="text-xl font-semibold mb-3 text-foreground">{item.title}</h3>
-              <p className="text-muted-foreground mb-6 leading-relaxed">{item.description}</p>
-              <Button
-                variant="ghost"
-                className="text-ted-red hover:text-ted-red hover:bg-ted-red/10 p-0 font-semibold"
-                asChild
-              >
-                <Link to={item.link}>
-                  {item.cta} →
-                </Link>
-              </Button>
+
+              <div className="relative z-10 p-8 h-full flex flex-col">
+                <div className="w-14 h-14 rounded-xl ted-gradient flex items-center justify-center mb-6">
+                  <item.icon className="h-7 w-7 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold mb-3 text-white">{item.title}</h3>
+                <p className="text-white/80 mb-6 leading-relaxed flex-grow">{item.description}</p>
+                <div className="mt-auto">
+                  <Button
+                    variant="ghost"
+                    className="text-ted-red hover:text-ted-red hover:bg-ted-red/10 p-0 font-semibold"
+                    asChild
+                  >
+                    <Link to={item.link}>
+                      {item.cta} →
+                    </Link>
+                  </Button>
+                </div>
+              </div>
             </motion.div>
           ))}
         </div>

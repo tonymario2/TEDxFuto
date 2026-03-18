@@ -12,7 +12,6 @@ const organizers = [
   { name: 'Ajanwachuku Adaeze', role: 'Branding & Hospitality Team Lead', image: '/images/Ajanwachuku Adaeze - Branding & Hospitality Team Lead.jpg' },
   { name: 'Ubah Joy', role: 'Branding & Hospitality Asst Lead', image: '/images/Ubah Joy_ Branding & Hospitality Asst Lead.avif' },
   { name: 'Donatus Oluchi', role: 'Speaker Curator Team Lead', image: '/images/Donatus Oluchi__ Speaker Curator Team Lead.avif' },
-  { name: 'Nmesoma Nnopu', role: 'Asst Curation Lead', image: 'https://ihpenhylfmcl3mb0.public.blob.vercel-storage.com/TEDx%20Futo%20Repo%202/Nmesoma%20Nnopu-%20Asst%20Curation%20Lead.jpg' },
   { name: 'Akinnubi Peter', role: 'Sponsorship Lead', image: '/images/Akinnubi Peter_ Sponsorship Lead .jpg' },
   { name: 'Asibezim Precious Onyinyechi', role: 'Programs Team Lead', image: '/images/Asibezim Precious Onyinyechi -Programs team lead .jpg' },
   { name: 'Odey Simon', role: 'Publicity Lead', image: '/images/Odey Simon_ Publicity Lead.avif' },
@@ -25,7 +24,7 @@ const Organizers = () => {
     <Layout>
       <section className="relative pt-32 pb-20">
         <div className="absolute inset-0 z-0">
-          <video autoPlay muted loop playsInline className="w-full h-full object-cover opacity-20" poster="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1920&q=80">
+          <video autoPlay muted loop playsInline className="w-full h-full object-cover opacity-20" poster="/Pictures/Images/Image Until hero Video loads.avif">
             <source src="https://assets.mixkit.co/videos/preview/mixkit-crowd-of-people-at-a-concert-2734-large.mp4" type="video/mp4" />
           </video>
           <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-background" />

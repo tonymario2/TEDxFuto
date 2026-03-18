@@ -51,18 +51,6 @@ const speakersByYear = {
     ...speaker,
     name: speaker.name ?? getSpeakerNameFromImagePath(speaker.image),
   })),
-  '2025': [
-    { name: 'Chinedu Okafor', role: 'Speaker', bio: 'Previous edition speaker.', image: '/images/Templated speaker 1.jpg' },
-    { name: 'Emeka Nwosu', role: 'Speaker', bio: 'Previous edition speaker.', image: '/images/Templated speaker 2.jpg' },
-    { name: 'Amina Bello', role: 'Speaker', bio: 'Previous edition speaker.', image: '/images/Templated speaker 6.jpg' },
-    { name: 'Sola Adeyemi', role: 'Speaker', bio: 'Previous edition speaker.', image: '/images/Templated speaker 4.jpg' },
-  ],
-  '2024': [
-    { name: 'David Okoro', role: 'Speaker', bio: 'Previous edition speaker.', image: '/images/Templated speaker 5.jpg' },
-    { name: 'Ifunanya Nwoye', role: 'Speaker', bio: 'Previous edition speaker.', image: '/images/Templated speaker 7.jpg' },
-    { name: 'Bolaji Ibrahim', role: 'Speaker', bio: 'Previous edition speaker.', image: '/images/Templated speaker 3.jpg' },
-    { name: 'Blessing Adekunle', role: 'Speaker', bio: 'Previous edition speaker.', image: '/images/Templated speaker 8.jpg' },
-  ],
 };
 
 const Speakers = () => {

@@ -12,6 +12,7 @@ const HeroSection = () => {
           muted
           loop
           playsInline
+          poster="/Pictures/Images/Image Until hero Video loads.avif"
           className="absolute inset-0 w-full h-full hero-video"
         >
           <source
