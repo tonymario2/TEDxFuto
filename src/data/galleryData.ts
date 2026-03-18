@@ -9,16 +9,32 @@ const mapToUrls = (glob: Record<string, any>) =>
   Object.keys(glob).map(path => path.replace('/public', ''));
 
 const reorderSpeakers = (urls: string[]) => {
-  if (urls.length < 5) return urls;
+  if (urls.length < 20) return urls;
   const newUrls = [...urls];
-  newUrls.pop(); // Remove the absolute last image
-  const secondLast = newUrls.pop()!; // Take what was the second to last
-  newUrls.splice(5, 0, secondLast); // Put it in the front-middle (6th position)
+  const lastImg = newUrls.pop()!;
+  newUrls.splice(19, 0, lastImg);
+  return newUrls;
+};
+
+const reorderEvents = (urls: string[]) => {
+  if (urls.length < 10) return urls;
+  const newUrls = [...urls];
+  
+  // Last one (n) -> Middle
+  const lastItem = newUrls.pop()!;
+  const middleIndex = Math.floor(newUrls.length / 2);
+  newUrls.splice(middleIndex, 0, lastItem);
+  
+  // Second to last (n-1) -> Towards the end (but not the very last)
+  const secondLastItem = newUrls.pop()!;
+  const nearEndIndex = newUrls.length - 2; // Position it 2 from the end
+  newUrls.splice(nearEndIndex, 0, secondLastItem);
+  
   return newUrls;
 };
 
 export const galleryData = {
-  eventMoments: mapToUrls(eventMoments),
+  eventMoments: reorderEvents(mapToUrls(eventMoments)),
   firesideChat: mapToUrls(firesideChat),
   organizersMoments: mapToUrls(organizersMoments),
   speakerMoments: reorderSpeakers(mapToUrls(speakerMoments)),
