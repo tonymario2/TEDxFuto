@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Maximize2, Play, Pause } from 'lucide-react';
+import { Maximize2, Play, Pause, X } from 'lucide-react';
 import { type CarouselApi } from "@/components/ui/carousel";
 import {
   Dialog,
@@ -8,6 +8,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
+  DialogClose,
 } from "@/components/ui/dialog";
 import {
   Carousel,
@@ -127,22 +128,33 @@ const GalleryAlbum: React.FC<GalleryAlbumProps> = ({ images, category, title, de
           <DialogTitle>{title} - Album Gallery</DialogTitle>
         </DialogHeader>
         
-        <div className="relative w-full h-full max-h-screen flex flex-col overflow-hidden">
+        <div className="relative w-full h-full max-h-screen flex flex-col overflow-hidden pt-12 md:pt-0">
           {/* Header Info (Inside Modal) */}
-          <div className="p-6 md:p-8 z-20 pointer-events-none bg-gradient-to-b from-black/80 to-transparent flex justify-between items-start shrink-0">
+          <div className="p-6 md:p-12 z-20 pointer-events-none bg-gradient-to-b from-black/80 to-transparent flex justify-between items-start shrink-0">
             <div className="flex-1">
-              <span className="text-ted-red font-bold uppercase tracking-widest text-[10px] mb-1 block">{category}</span>
+              <div className="flex items-center justify-between mb-2">
+                <span className="text-ted-red font-bold uppercase tracking-widest text-[10px] block">{category}</span>
+                
+                {/* Close Button - Now side by side with the header info on mobile */}
+                <DialogClose className="pointer-events-auto w-10 h-10 rounded-full bg-white/10 hover:bg-ted-red transition-colors flex items-center justify-center text-white backdrop-blur-md border border-white/10 md:hidden">
+                  <X size={20} />
+                </DialogClose>
+              </div>
+
               <h2 className="text-2xl md:text-4xl font-black text-white leading-tight">{title}</h2>
-              <p className="text-white/60 mt-1 text-sm max-w-xl line-clamp-1 md:line-clamp-none">{description}</p>
+              <p className="text-white/60 mt-2 text-sm max-w-xl line-clamp-1 md:line-clamp-none mb-6">{description}</p>
+              
+              {/* Moved Pause Button - Now below description and easier to reach */}
+              <button 
+                onClick={() => setIsSlideshowActive(!isSlideshowActive)}
+                className="pointer-events-auto w-12 h-12 rounded-full bg-white/10 hover:bg-ted-red/80 transition-colors flex items-center justify-center text-white backdrop-blur-md shadow-lg border border-white/10"
+                title={isSlideshowActive ? "Pause Slideshow" : "Play Slideshow"}
+              >
+                {isSlideshowActive ? <Pause size={20} /> : <Play size={20} />}
+              </button>
             </div>
-            <button 
-              onClick={() => setIsSlideshowActive(!isSlideshowActive)}
-              className="pointer-events-auto w-10 h-10 rounded-full bg-white/10 hover:bg-ted-red/80 transition-colors flex items-center justify-center text-white backdrop-blur-md"
-              title={isSlideshowActive ? "Pause Slideshow" : "Play Slideshow"}
-            >
-              {isSlideshowActive ? <Pause size={18} /> : <Play size={18} />}
-            </button>
           </div>
+
 
           {/* Image Carousel */}
           <div className="flex-1 w-full min-h-0 container mx-auto flex items-center justify-center px-4 md:px-20 pb-8 overflow-hidden">
@@ -160,10 +172,30 @@ const GalleryAlbum: React.FC<GalleryAlbumProps> = ({ images, category, title, de
                   </CarouselItem>
                 ))}
               </CarouselContent>
-              <CarouselPrevious className="flex -left-4 md:-left-12 bg-white/10 hover:bg-white/20 border-white/10 text-white" />
+               <CarouselPrevious className="flex -left-4 md:-left-12 bg-white/10 hover:bg-white/20 border-white/10 text-white" />
               <CarouselNext className="flex -right-4 md:-right-12 bg-white/10 hover:bg-white/20 border-white/10 text-white" />
             </Carousel>
           </div>
+
+          {/* Progress Bar (Moved below carousel) */}
+          {api && (
+            <div className="px-6 md:px-12 py-6 md:py-8 shrink-0 bg-gradient-to-t from-black/80 to-transparent">
+              <div className="w-full h-1 bg-white/10 rounded-full overflow-hidden">
+                <motion.div 
+                  className="h-full bg-ted-red"
+                  initial={{ width: 0 }}
+                  animate={{ 
+                    width: `${((api.selectedScrollSnap() + 1) / images.length) * 100}%` 
+                  }}
+                  transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                />
+              </div>
+              <div className="text-[10px] text-white/40 mt-2 font-mono tracking-tighter flex justify-between items-center">
+                <span>{api.selectedScrollSnap() + 1} / {images.length}</span>
+                <span className="uppercase tracking-widest opacity-50">TEDxFUTO 2026</span>
+              </div>
+            </div>
+          )}
         </div>
       </DialogContent>
     </Dialog>
